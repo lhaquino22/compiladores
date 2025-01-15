@@ -1,0 +1,2 @@
+Erro sintático na linha 4 próximo a 'str'
+None

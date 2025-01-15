@@ -1,0 +1,17 @@
+Program Maior_Menor { 
+      float a, b; 
+      input(a, b);
+      str b;
+      if (a > b){ 
+            print("Maior: ", a); 
+      }else{ 
+            if( a < b){ 
+                  print("Maior: ", b); 
+            }else{ 
+                  print("Iguais!"); 
+            } 
+            while(b){
+                  print("Loop");
+            }
+      }
+} 
