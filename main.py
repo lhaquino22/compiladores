@@ -1,19 +1,10 @@
-from lexer import lexer
+from parser import parse_file
 
 def analyze_file(filename):
     try:
-        with open(filename, 'r') as file:
-            data = file.read()
-        
-        lexer.input(data)
-        
-        # Tokenização
-        while True:
-            tok = lexer.token()
-            if not tok:
-                break
-            print(f"<{tok.type}, {tok.value}>")
-            
+        # Chama o parser que vai gerar a AST
+        ast = parse_file(filename)
+        print(ast)
     except FileNotFoundError:
         print(f"Erro: Arquivo '{filename}' não encontrado.")
     except Exception as e:
@@ -25,4 +16,4 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Uso: python main.py arquivo.lps")
     else:
-        analyze_file(sys.argv[1]) 
+        analyze_file(sys.argv[1])
