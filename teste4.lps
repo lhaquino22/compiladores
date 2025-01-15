@@ -1,0 +1,9 @@
+Program Calculator {
+    float a;
+    float b;
+    input(a);
+    input(b);
+    float result;
+    result = a + b * 2.5;
+    print(result);
+}
