@@ -1,12 +1,25 @@
 from parser import parse_file
 
+from parser import parse_file
+from semantic_analyzer import SemanticAnalyzer
+
 def analyze_file(filename):
     try:
-        # Chama o parser que vai gerar a AST
+        # Parse do arquivo para gerar a AST
         ast = parse_file(filename)
-        print(ast)
-    except FileNotFoundError:
-        print(f"Erro: Arquivo '{filename}' não encontrado.")
+        
+        # Análise semântica
+        analyzer = SemanticAnalyzer()
+        success, errors = analyzer.analyze(ast)
+        
+        if not success:
+            print("Erros semânticos encontrados:")
+            for error in errors:
+                print(f"- {error}")
+        else:
+            print("Análise semântica concluída com sucesso!")
+            ast.print_tree()
+            
     except Exception as e:
         print(f"Erro ao processar arquivo: {str(e)}")
 
