@@ -63,7 +63,7 @@ def t_ID(t):
 
 # Regra para números float
 def t_FLOAT(t):
-    r'\d*\.\d+'
+    r'\d+\.\d+'
     t.value = float(t.value)
     return t
 
