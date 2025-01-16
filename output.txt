@@ -1,2 +1,2 @@
-Erro sintático na linha 4 próximo a 'str'
-None
+Debug: Criado BinOp + com filhos (ID a) e (BinOp *)
+Erro ao processar arquivo: name 'Node' is not defined

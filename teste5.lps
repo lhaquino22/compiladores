@@ -1,0 +1,4 @@
+Program Fator {
+    int mult;
+    mult = 3 * (5-1);
+}
