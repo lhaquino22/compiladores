@@ -8,21 +8,26 @@ Requisitos:
 - PLY (Python Lex-Yacc)
 
 Instalação:
-1. Instale o PLY usando pip:
-   pip install ply
+1. Instale os requirementos usando pip:
+   pip install -r requirements.txt
 
 Execução:
-1. Para executar o analisador léxico:
+1. Para executar o compilador:
    python main.py arquivo.lps
 
-O programa irá ler o arquivo de entrada e imprimir na saída padrão cada token encontrado
-no formato <tipo_token, valor_token>.
+O programa irá ler o arquivo de entrada e imprimir na saída padrão a árvore de derivação e o codigo de três Endereços.
 
 Exemplo de saída:
-<PROGRAM, Program>
-<ID, Fatorial>
-<LBRACE, {>
-...
+
+0: DECLARE a
+1: DECLARE b
+2: INPUT a
+3: INPUT b
+4: DECLARE result
+5: t0 = b * 2.5
+6: t1 = a + t0
+7: result = t1
+8: PRINT result
 
 Referências utilizadas:
 - Documentação do PLY: https://www.dabeaz.com/ply/
