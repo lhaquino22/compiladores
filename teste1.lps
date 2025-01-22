@@ -1,9 +1,0 @@
-Program Teste {
-    int x;
-    input(x);
-    if(x > 0){
-        print("Positivo");
-    }else{
-        print("Negativo");
-    }
-} 
