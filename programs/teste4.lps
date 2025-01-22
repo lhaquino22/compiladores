@@ -1,0 +1,9 @@
+Program Calculator {
+    int a;
+    int b;
+    input(a);
+    input(b);
+    int result;
+    result = a + b * 2;
+    print(result);
+}

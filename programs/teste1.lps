@@ -1,0 +1,11 @@
+Program Teste {
+    int x, i;
+    i = 0;
+    print("Insira o valor de x:");
+    input(x);
+    if(x > 2){
+        print("Valor maior que 2");
+    } else {
+        print("Valor menor que 2");
+    }
+}

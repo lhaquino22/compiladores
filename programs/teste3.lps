@@ -1,0 +1,12 @@
+Program Fatorial { 
+      int fat, res;
+      //fat = "Teste";
+      //t = 1;
+      input(fat);  
+      while( fat > 1 ){ 
+            print (res); 
+            res = res * (fat - 1); 
+      } 
+      print("Resultado final:", res);
+      int j,i,o,l;
+}
