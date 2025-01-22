@@ -168,6 +168,34 @@ class Node:
         generator.add_instruction(f"{target} = {value}")
         return target
 
+    def generate_tac_If(self, generator):
+        condition = self.children[0].generate_tac(generator)
+        
+        # Gera labels para os blocos
+        else_label = generator.new_label()
+        end_label = generator.new_label()
+        
+        # Adiciona o desvio condicional
+        generator.add_instruction(f"if not {condition} goto {else_label}")
+        
+        # Gera código para o bloco if
+        self.children[1].generate_tac(generator)
+        
+        # Pula o bloco else
+        generator.add_instruction(f"goto {end_label}")
+        
+        # Label para o bloco else
+        generator.add_instruction(f"{else_label}:")
+        
+        # Se houver um bloco else, gera seu código
+        if len(self.children) > 2:
+            self.children[2].generate_tac(generator)
+        
+        # Label para o fim do if-else
+        generator.add_instruction(f"{end_label}:")
+        
+        return None
+
     def generate_tac_BinOp(self, generator):
         left = self.children[0].generate_tac(generator)
         right = self.children[1].generate_tac(generator)
